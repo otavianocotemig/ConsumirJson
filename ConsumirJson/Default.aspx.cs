@@ -17,19 +17,22 @@ namespace ConsumirJson
               
         protected void Page_Load(object sender, EventArgs e)
         {
-            GridView1.DataSource = GetPost();
-            GridView1.DataBind();
+           
         }
 
-        public DataTable GetPost()
+        public DataTable GetJson()
         {
-            var requisicaoWeb = WebRequest.CreateHttp("http://jsonplaceholder.typicode.com/posts/");
+            var requisicaoWeb = WebRequest.CreateHttp("https://jsonplaceholder.typicode.com/albums");
             requisicaoWeb.Method = "GET";
-            requisicaoWeb.UserAgent = "ReqOtaviano";
+            requisicaoWeb.UserAgent = "AspNet";
+            
+
             var resposta = requisicaoWeb.GetResponse();
             var streamDados = resposta.GetResponseStream();
             StreamReader reader = new StreamReader(streamDados);
             string objResponse = reader.ReadToEnd();
+
+
             var table = JsonConvert.DeserializeObject<DataTable>(objResponse);
             return table;
 
@@ -37,6 +40,10 @@ namespace ConsumirJson
 
         }
 
-        
+        protected void btnJson_Click(object sender, EventArgs e)
+        {
+            GridView1.DataSource = GetJson();
+            GridView1.DataBind();
+        }
     }
 }
