@@ -22,12 +22,13 @@ namespace ConsumirJson
 
         public DataTable GetJson()
         {
-            var requisicaoWeb = WebRequest.CreateHttp("https://jsonplaceholder.typicode.com/albums");
-            requisicaoWeb.Method = "GET";
-            requisicaoWeb.UserAgent = "AspNet";
-            
-
+           var requisicaoWeb = WebRequest.CreateHttp("https://jsonplaceholder.typicode.com/posts");
+           requisicaoWeb.Method = "GET";
+           requisicaoWeb.UserAgent = "AspNet";
+                   
+            // Recupera a resposta da requisição web
             var resposta = requisicaoWeb.GetResponse();
+            // Recupera os dados do Body = Conteudo de uma requisicao Web
             var streamDados = resposta.GetResponseStream();
             StreamReader reader = new StreamReader(streamDados);
             string objResponse = reader.ReadToEnd();
@@ -44,6 +45,13 @@ namespace ConsumirJson
         {
             GridView1.DataSource = GetJson();
             GridView1.DataBind();
+        }
+
+        protected void btnSituacaoLoja_Click(object sender, EventArgs e)
+        {
+            
+
+
         }
     }
 }

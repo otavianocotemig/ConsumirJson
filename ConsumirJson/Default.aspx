@@ -13,11 +13,19 @@
 
             <asp:Button ID="btnJson" runat="server" Text="Ler Arquivos Json" OnClick="btnJson_Click" />
 
+            <br />
+            Código do ALuno<br />
+            <asp:TextBox ID="txtCdAluno" runat="server" Width="139px"></asp:TextBox>
+            <br />
+            <asp:Label ID="lblsituacao" runat="server" ForeColor="#0033CC" Text="."></asp:Label>
+            <br />
+
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false">
                 <Columns>
-                    <asp:BoundField DataField="userId" HeaderText="userId" />
-                    <asp:BoundField DataField="id" HeaderText="id" />
-                    <asp:BoundField DataField="title" HeaderText="Título" />
+                    <asp:BoundField DataField="userId" HeaderText="Id" />
+                    <asp:BoundField DataField="id" HeaderText="Title" />
+                    <asp:BoundField DataField="title" HeaderText="Url" />
+                    <asp:BoundField DataField="body" HeaderText="Imagem" />
                 </Columns>
             </asp:GridView>
 

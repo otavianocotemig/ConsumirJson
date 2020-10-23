@@ -33,6 +33,24 @@ namespace ConsumirJson
         protected global::System.Web.UI.WebControls.Button btnJson;
 
         /// <summary>
+        /// Controle txtCdAluno.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCdAluno;
+
+        /// <summary>
+        /// Controle lblsituacao.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblsituacao;
+
+        /// <summary>
         /// Controle GridView1.
         /// </summary>
         /// <remarks>
